@@ -4,23 +4,25 @@ import { Product } from "../product/ui.js"
 
 export function Catalog() {
 
-    const [data, setData] = useState([ ])
+    const [catalog, setCatalog] = useState([ ])
    
 
     useEffect( () => {
+
         const products = getProducts()
         console.log(products)
-        setData(products)
+        setCatalog(products)
     },[])
 
     return (
         <div>
             <h1>List of Products</h1>
             <ol>
-                <li> {data && data.map(product => 
+                <li> 
+                    {/* {catalog && catalog.map(product => 
                     <Product key={product.id} productObject={product} />
-                    ) }
-                </li>
+                    ) }  */}
+                 </li>
             </ol>
         </div>
     )
