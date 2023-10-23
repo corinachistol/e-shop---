@@ -4,7 +4,7 @@ import { Product } from "./model.js"
 
 export async function getProducts() {
 
-   const response = await fetch('http://localhost:3000/')
+   const response = await fetch('http://localhost:3001/')
    const products = await response.json()
    console.log(products)
   

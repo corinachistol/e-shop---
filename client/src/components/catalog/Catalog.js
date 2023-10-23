@@ -4,16 +4,25 @@ import { Product } from "../product/ui"
 
 export function Catalog() {
 
-    const [productObject, setProduct] = useState(null)
-
-    //render the products
-
-    //getInitialData
+    const [data, setData] = useState([ ])
+    console.log(data)
 
     useEffect( () => {
-        setProduct(productObject)
+        const products = getProducts()
+        setData(products)
+    },[])
 
-    },[productObject])
+    return (
+        <div>
+            <h1>List of Products</h1>
+            <ol>
+                <li> { data.map(product => 
+                    <Product key={product.id} productObject={product} />
+                    ) }
+                </li>
+            </ol>
+        </div>
+    )
 
     
 
