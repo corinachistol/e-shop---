@@ -19,9 +19,9 @@ export function Catalog() {
             <h1>List of Products</h1>
             <ol>
                 <li> 
-                    {/* {catalog && catalog.map(product => 
+                    {products && products.map(product => 
                     <Product key={product.id} productObject={product} />
-                    ) }  */}
+                    ) } 
                  </li>
             </ol>
         </div>

@@ -9,9 +9,9 @@ export async function getProducts() {
    console.log(products)
   
     
-    // return products.map(product => {
-    //     return new Product(product)
-    // })
+    return products.map(product => {
+        return new Product(product)
+    })
 }
 
 
