@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "e_shop_ff_orm",
+  "name": "e_shop_",
   "version": "1.0.0",
   "description": "",
   "main": "./public/server.js",

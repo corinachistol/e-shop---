@@ -11,6 +11,9 @@ export class Product {
     @Column()
     public name!: string;
 
+    @Column()
+    public image!: string;
+
     @Column( () => Money )
     public price!: Money;
 }
