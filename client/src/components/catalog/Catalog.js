@@ -28,10 +28,10 @@ export function Catalog() {
 
     return (
         <div>
-            {catalog && catalog.map(product => {
-                return <Product key={product.id} productObject={product} />
-                }   
-            ) }   
+            {catalog && catalog.map(product => 
+                    <Product key={product.id} productObject={catalog} />
+                    ) } 
+          
         </div>
     )
 }
