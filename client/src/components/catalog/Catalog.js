@@ -9,24 +9,29 @@ export function Catalog() {
 
     useEffect( () => {
 
-        const products = getProducts()
-        console.log(products)
-        setCatalog(products)
+        //Varianta1
+        // (async () => {
+        //     const products = await getProducts()
+        //     setCatalog(products)
+        //     console.log(products)
+        // })()
+
+        //Varianta2
+        const loadProducts = async() => {
+            const products = await getProducts()
+            setCatalog(products)
+            console.log(products)
+        }
+        loadProducts()
+
     },[])
 
     return (
         <div>
-            <h1>List of Products</h1>
-            <ol>
-                <li> 
-                    {products && products.map(product => 
-                    <Product key={product.id} productObject={product} />
-                    ) } 
-                 </li>
-            </ol>
+            {catalog && catalog.map(product => {
+                return <Product key={product.id} productObject={product} />
+                }   
+            ) }   
         </div>
     )
-
-    
-
 }

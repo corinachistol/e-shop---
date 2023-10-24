@@ -38,6 +38,8 @@ fastify.get('/', async (request, reply) => {
           _type: 'Money'
         }
       }
+
+      
     })
     
     reply.code(200).send(newPayload) 
