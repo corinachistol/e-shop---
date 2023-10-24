@@ -27,11 +27,14 @@ export function Catalog() {
     },[])
 
     return (
-        <div>
-            {catalog && catalog.map(product => 
-                    <Product key={product.id} productObject={catalog} />
-                    ) } 
-          
-        </div>
+        <ol>
+            { catalog.map(product => (
+                <li key ={product.id}>
+                {/* <Product key={product.id} productObject={product} /> */}
+                    {product.name} {product.price.amount} {product.price.currency}
+                    <img style={{width:"200px"}} src={product.image} alt={product.name} />
+                </li>
+            )) } 
+        </ol>
     )
 }
