@@ -5,9 +5,11 @@ export class Product{
         this.id = id
         this.name = name
         this.image = image
-        this.price = new Money({id, amount, currency})
+        this.price = price
 
     }
 }
+
+// new Money({id, amount, currency})
 
 

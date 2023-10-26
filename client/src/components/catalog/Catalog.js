@@ -28,12 +28,15 @@ export function Catalog() {
 
     },[])
 
-    // asa nu functioneaza
+    
     return <ol>
         {catalog && catalog.map( product =>{
-            return <Product key={product.id} productObject={product} />
+            return <Product key={product.id} 
+                productObject={product} 
+                />
+                
         } )}
-        <Money/>
+        {/* <Money/> */}
           </ol>
 
     // return (
