@@ -2,8 +2,8 @@ import React from "react"
 import { Money } from "../money/ui"
 import { getMoney } from "../money/api"
 
-export function Product({productObject:{name,image,price:{amount,currency}}}){
-    console.log(name,amount,currency)
+export function Product({productObject:{name,image}}){
+    console.log(name)
 
     // const getMoney = await getMoney()
     // const products = await getMoney.json()
@@ -13,7 +13,7 @@ export function Product({productObject:{name,image,price:{amount,currency}}}){
         <div>
             <h2>{name}</h2>
             <img src={image} alt={name} style={{width:"200px"}} />
-            <p>{amount} {currency}</p>
+            <Money />
 
             {/* { products.map( (product,index) => {
                 const productPrice = product[index]

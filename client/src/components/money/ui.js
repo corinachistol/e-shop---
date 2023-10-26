@@ -1,4 +1,6 @@
+import React from "react"
 
-export function Money(props) {
-    return <p>{props.productObject.price}</p>
+export function Money({productObject:{ price :{ amount,currency} } }) {
+    console.log(amount,currency)
+    return <p> {amount} {currency}</p>
 }
