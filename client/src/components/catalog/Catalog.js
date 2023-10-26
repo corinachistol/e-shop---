@@ -21,20 +21,28 @@ export function Catalog() {
             const products = await getProducts()
             setCatalog(products)
             console.log(products)
+            
         }
         loadProducts()
 
     },[])
 
-    return (
-        <ol>
-            { catalog.map(product => (
-                <li key ={product.id}>
-                {/* <Product key={product.id} productObject={product} /> */}
-                    {product.name} {product.price.amount} {product.price.currency}
-                    <img style={{width:"200px"}} src={product.image} alt={product.name} />
-                </li>
-            )) } 
-        </ol>
-    )
+    // asa nu functioneaza
+    return <>
+        {catalog.map( product =>{
+            return <Product key={product.id} productObject={product}/>
+        } )}
+          </>
+
+    // return (
+    //     <ol>
+    //         { catalog.map(product => (
+    //             <li key ={product.id}>
+    //             { <Product key={product.id} productObject={product} /> }
+    //                 {product.name} {product.price.amount} {product.price.currency}
+    //                 <img style={{width:"200px"}} src={product.image} alt={product.name} />
+    //             </li>
+    //         )) } 
+    //     </ol>
+    // )
 }
