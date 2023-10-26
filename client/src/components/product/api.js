@@ -6,7 +6,7 @@ export async function getProducts() {
 
    const response = await fetch('http://localhost:3000/')
    const products = await response.json()
-//    console.log(products)
+   console.log(products)
   
     
     return products.map(product => {

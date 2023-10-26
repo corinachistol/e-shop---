@@ -21,12 +21,13 @@ export function postProduct(fastify, options) {
             schema: postProductSchema,
             handler: (request, reply) => __awaiter(this, void 0, void 0, function* () {
                 try {
-                    const { name, image, priceAmount, priceCurrency } = request.body;
+                    const { name, image, priceId, priceAmount, priceCurrency } = request.body;
                     // console.log(name, amount, currency)
                     const newProduct = new Product();
                     newProduct.name = name;
                     newProduct.image = image;
                     newProduct.price = new Money();
+                    newProduct.price.id = priceId;
                     newProduct.price.amount = priceAmount;
                     newProduct.price.currency = priceCurrency;
                     yield fastify.orm.manager.save(newProduct);

@@ -14,13 +14,14 @@ export async function postProduct (fastify:FastifyInstance, options: object) {
         schema:postProductSchema,
         handler: async (request:FastifyRequest, reply:FastifyReply ) => {
             try {
-                const {name, image, priceAmount, priceCurrency} = request.body
+                const {name, image,priceId priceAmount, priceCurrency} = request.body
                 // console.log(name, amount, currency)
 
                 const newProduct = new Product()
                 newProduct.name = name;
                 newProduct.image = image;
                 newProduct.price = new Money();
+                newProduct.price.id = priceId;
                 newProduct.price.amount = priceAmount;
                 newProduct.price.currency = priceCurrency;
                 await fastify.orm.manager.save(newProduct)

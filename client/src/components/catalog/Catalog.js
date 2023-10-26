@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../product/api.js"
 import { Product } from "../product/ui.js"
+import {Money} from "../money/ui.js"
 
 export function Catalog() {
 
@@ -28,11 +29,12 @@ export function Catalog() {
     },[])
 
     // asa nu functioneaza
-    return <>
-        {catalog.map( product =>{
-            return <Product key={product.id} productObject={product}/>
+    return <ol>
+        {catalog && catalog.map( product =>{
+            return <Product key={product.id} productObject={product} />
         } )}
-          </>
+        <Money/>
+          </ol>
 
     // return (
     //     <ol>

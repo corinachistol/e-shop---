@@ -22,7 +22,7 @@ fastify.register(postProduct,)
 fastify.register(getAllClients)
 fastify.register(postClient)
 
-fastify.get('/', async (request, reply) => {
+fastify.get('/',  async (request, reply) => {
     
   const products = await fastify.orm
         .getRepository(Product)
